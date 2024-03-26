@@ -26,8 +26,8 @@ const volumen = document.querySelector(".volumen")
 const imgVolume = document.querySelector(".img-volume")
 const volumeMuteado = document.querySelector(".volume-muteado")
 
-// BOTONES 
 
+//  EVENTOS DE BOTONES 
 iniciar.addEventListener("click", () => {
         music.play()
 }
@@ -91,8 +91,8 @@ barra.addEventListener("change", ()=> {
 
 // ------------------------------------
 
-// RUTA PARA IMG, CANCION Y NOMBRE
 
+// RUTA PARA IMG, CANCION Y NOMBRE
 const obtenerMusica = (i) => {
     barra.value = 0;
 
@@ -118,6 +118,7 @@ obtenerMusica(0);
 
 // -----------------------------
 
+
 // AJUSTES DE MIN Y SEG
 const formatoTiempo = (time) => {
     let min = Math.floor(time / 60);
@@ -133,8 +134,8 @@ const formatoTiempo = (time) => {
 
 // -------------------------------
 
-// EVENTOS CON MUSIC
 
+// EVENTOS CON MUSIC
 music.addEventListener("ended",() =>{
     siguiente.click();
 })
@@ -152,7 +153,7 @@ music.addEventListener("pause",() => {
 
 
 
-// VOLUME
+// VOLUMEN
 volumen.addEventListener("input", ()=>{
     music.volume = volumen.value/100 ;
     if (volumen.value == 0){
@@ -178,9 +179,10 @@ volumeMuteado.addEventListener("click", ()=> {
     music.muted = false ;
 })
 
+// ------------------
+
 
 // EVENTOS DEL TECLADO
-
 document.addEventListener("keydown", (e)=> {
     let letra = e.code;
     if ( letra == "KeyM"){
